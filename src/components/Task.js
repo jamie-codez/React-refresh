@@ -1,34 +1,17 @@
-import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 
-const Task = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: "Doctors Appointment",
-      day: "Feb 5th at 2.30pm",
-      reminder: true,
-    },
-    {
-      id: 2,
-      text: "Meeting at school",
-      day: "Feb 6th at 1.30pm",
-      reminder: true,
-    },
-    {
-      id: 3,
-      text: "Food shopping",
-      day: "Feb 5th at 2.30pm",
-      reminder: true,
-    },
-  ]);
-  
-
+const Task = ({ task, onDelete, onToggle }) => {
   return (
-    <>
-      {tasks.map((task) => (
-        <h3 key={task.id}>{task.text}</h3>
-      ))}
-    </>
+    <div className={`task ${task.reminder ? 'reminder' : ''}`} onDoubleClick={() => onToggle(task.id)}>
+      <h3>
+        {task.text}{" "}
+        <FaTimes
+          style={{ color: "red", cursor: "pointer" }}
+          onClick={() => onDelete(task.id)}
+        />
+      </h3>
+      <p>{task.day}</p>
+    </div>
   );
 };
 

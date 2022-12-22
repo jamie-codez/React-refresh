@@ -63,23 +63,27 @@ body{
   transform: scale(0.98);
 }
 
-.btn-block{
+.btn-block {
   display: block;
   width: 100%;
 }
 
-.event{
-  background: #fff;
+.task {
+  background: #f4f4f4;
   margin: 5px;
   padding: 10px;
   padding: 10px 20px;
   cursor: pointer;
 }
 
-.event h3{
+.task h3 {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.task.reminder{
+  border-left: 5px solid green;
 }
 
 .add-form{
