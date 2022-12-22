@@ -1,13 +1,8 @@
+import Header from "./components/Header";
 function App() {
-  const name = "James";
-  const x = true;
-  return (
-    <div className="container">
-      <h1>Hello from React</h1>
-      <h2>Hello {name}</h2>
-      <h2>{x ? "Yes" : "No"}</h2>
-    </div>
-  );
+  return <div className="container">
+    <Header title="Hello"/>
+  </div>;
 }
 
 export default App;
